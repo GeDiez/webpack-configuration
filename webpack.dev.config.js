@@ -3,10 +3,12 @@ const webpack = require('webpack');
 const manifest = require('./modules-manifest.json');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'webapp/app.js'),
+  entry: {
+    bundle: path.resolve(__dirname, 'webapp/app.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'bundle.js',
+    filename: 'javascript/[name].js',
   },
   devServer: {
     open: true,

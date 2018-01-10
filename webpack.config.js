@@ -6,8 +6,8 @@ const manifest = require('./modules-manifest.json');
 module.exports = {
   entry: path.resolve(__dirname, 'webapp/app.js'),
   output: {
-    path: path.resolve(__dirname, 'build/javascript'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    filename: 'javascript/bundle.js',
   },
   module: {
     rules: [
