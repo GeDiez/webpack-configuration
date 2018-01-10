@@ -1,4 +1,6 @@
 const path = require('path');
+const webpack = require('webpack');
+const manifest = require('./modules-manifest.json');
 
 module.exports = {
   entry: path.resolve(__dirname, 'webapp/app.js'),
@@ -9,9 +11,9 @@ module.exports = {
   devServer: {
     open: true,
     port: 9000,
-    contentBase: path.resolve(__dirname, 'build')
+    contentBase: path.resolve(__dirname, 'build'),
   },
-  watch : true,
+  watch: true,
   module: {
     rules: [
       {
@@ -21,12 +23,17 @@ module.exports = {
           options: {
             presets: ['es2015', 'react'],
           },
-        }
+        },
       },
       {
         test: /(\.css)$/,
         loader: ['style-loder', 'css-loader'],
-      }
+      },
     ],
-  }
-}
+  },
+  plugins: [
+    new webpack.DllReferencePlugin({
+      manifest,
+    }),
+  ],
+};
