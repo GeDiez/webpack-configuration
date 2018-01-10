@@ -1,0 +1,39 @@
+{
+  "name": "using-google-sign-in",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "scripts": {
+    "lint": "eslint ./webapp",
+    "dev:server": "nodemon server.js",
+    "build:server": "node server.js",
+    "dev:webapp": "webpack-dev-server --config ./webpack.dev.config.js",
+    "build:webapp": "webpack --config ./webpack.config.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.8",
+    "eslint": "^4.15.0",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.4.0",
+    "eslint-plugin-react": "^7.5.1",
+    "nodemon": "^1.14.10",
+    "prettier": "^1.9.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.10.1"
+  }
+}
