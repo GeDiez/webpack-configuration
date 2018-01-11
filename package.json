@@ -11,8 +11,8 @@
     "dev:server": "nodemon server.js",
     "build:server": "node server.js",
     "dev:webapp": "webpack-dev-server --config ./webpack.dev.config.js",
-    "build:webapp": "webpack --config ./webpack.config.js",
-    "webpack:dll": "webpack --config ./webpack.dll.js"
+    "build:webapp": "webpack -p --config ./webpack.config.js",
+    "webpack:dll": "webpack -p --config ./webpack.dll.js"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -30,6 +30,7 @@
     "eslint-plugin-prettier": "^2.4.0",
     "eslint-plugin-react": "^7.5.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
     "nodemon": "^1.14.10",
     "prettier": "^1.9.2",
     "react": "^16.2.0",
