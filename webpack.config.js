@@ -2,17 +2,21 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 const manifest = require('./modules-manifest.json');
+const htmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, 'webapp/app.js'),
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'javascript/bundle.js',
+    chunkFilename: '[id].[chunkhash].js',
+    publicPath: '/',
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
+        exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -23,13 +27,20 @@ module.exports = {
       {
         test: /(\.css)$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader'],
+          use: {
+            loader: 'css-loader',
+            options: { minimize: true },
+          },
         }),
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('css/[name].css'),
+    new htmlPlugin({
+      filename: 'index.html',
+      template: './assets/index-production.html',
+    }),
+    new ExtractTextPlugin('css/[name].[hash].css'),
     new webpack.DllReferencePlugin({
       manifest,
     }),
