@@ -1,6 +1,6 @@
-# Project
+# My Webpack configuration
 
-Webpack configuration with wepack-dev-server
+Webpack configuration with wepack-dev-server for enviroments development and production
 
 ## Getting Started
 
@@ -22,7 +22,26 @@ you might clone de repository on your local and getting start:
 or
 * ``` npm install ```
 
-the following proyect let you get a webpack configuration fast and simpley to enviroments both development and production
+you migth modify webpack.dll.js with your common dependencies, the array object has the dependencies
+that never change like react, redux, react-dom
+```
+entry: {
+    modules: ['react', 'react-dom'],
+  },
+```
+when you have all your dependencies added, run the next command on your terminal:
+
+```
+yarn run webpack:dll or npm run webpack:dll
+```
+it will generate two new files on your project
+* build/javascript/modules.js
+* modules-manifest.json
+
+note: the configuration above is apply only once but if you update some dependencie like react you might
+run the build again
+
+the following steps let you get a fast and simply webpack configuration to enviroments to both development and production
 
 #### mode developmet
 
