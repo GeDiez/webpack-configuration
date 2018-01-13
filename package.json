@@ -8,10 +8,10 @@
   },
   "scripts": {
     "lint": "eslint ./webapp",
-    "dev:server": "nodemon server.js",
-    "build:server": "node server.js",
-    "dev:webapp": "webpack-dev-server --config ./webpack.dev.config.js",
-    "build:webapp": "webpack -p --config ./webpack.config.js",
+    "server:dev": "nodemon server.js",
+    "server:build": "node server.js",
+    "webapp:dev": "webpack-dev-server --config ./webpack.dev.config.js",
+    "webapp:build": "webpack -p --config ./webpack.config.js",
     "webpack:dll": "webpack -p --config ./webpack.dll.js"
   },
   "devDependencies": {
