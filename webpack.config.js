@@ -38,7 +38,7 @@ module.exports = {
   plugins: [
     new htmlPlugin({
       filename: 'index.html',
-      template: './assets/index-production.html',
+      template: './assets/index.html',
     }),
     new ExtractTextPlugin('css/[name].[hash].css'),
     new webpack.DllReferencePlugin({

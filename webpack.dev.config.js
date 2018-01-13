@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const manifest = require('./modules-manifest.json');
+const htmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -35,6 +36,10 @@ module.exports = {
     ],
   },
   plugins: [
+    new htmlPlugin({
+      filename: 'index.html',
+      template: './assets/index.html',
+    }),
     new webpack.DllReferencePlugin({
       manifest,
     }),
