@@ -5,7 +5,7 @@ const htmlPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    bundle: path.resolve(__dirname, 'webapp/app.js'),
+    bundle: path.resolve(__dirname, 'webapp/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -15,8 +15,9 @@ module.exports = {
     open: true,
     port: 9000,
     contentBase: path.resolve(__dirname, 'build'),
+    hot: true,
   },
-  watch: true,
+  watch: false,
   module: {
     rules: [
       {
@@ -36,6 +37,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new htmlPlugin({
       filename: 'index.html',
       template: './assets/index.html',

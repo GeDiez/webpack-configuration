@@ -1,12 +1,10 @@
-const express = require('express');
-const app = express();
+const Router = require('./router/expressRouter');
 
-const signWithGoogle = require('./controller/signWithGoogle');
+const { routesModelsCatalog } = require('./routes/modelsCatalog');
 
-app.use(express.static('build'))
+routesModelsCatalog(Router);
 
-app.post('/signWithGoogle', signWithGoogle.postSign);
+if (process.env.NODE_ENV === 'development') {
+}
 
-app.listen(3000, () => {
-  console.log('Server listen on port 3000')
-});
+Router.init();

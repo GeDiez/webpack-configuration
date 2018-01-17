@@ -1,8 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import './style.css';
 
 const App = () => {
-  return <div>hello world!</div>;
+  return (
+    <div className="div">
+      Title:::
+      <label htmlFor="">name: </label>
+      <input type="text" />
+      <label htmlFor="">password:</label>
+      <input type="text" />
+    </div>
+  );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;

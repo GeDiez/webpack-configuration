@@ -1,2 +1,11 @@
-node_modules/
-./.gitignore
+#node
+/node_modules/
+.gitignore
+
+#production
+/build/
+modules-manifest.json
+
+#development
+.env
+nodemon.json
